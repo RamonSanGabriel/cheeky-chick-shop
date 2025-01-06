@@ -11,6 +11,10 @@ function App() {
     console.log(response.data.message);
   };
 
+  /*   useEffect(() => {
+    fetchAPI();
+  }, []); */
+
   useEffect(() => {
     (async () => {
       try {

@@ -10,7 +10,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.get('/api', (req, res) => {
-  // res.json({ message: ['Hi', 'Hello', 'How are you'] });
+  res.json({ message: ['Hi', 'Hello', 'How are you'] });
 });
 
 app.listen(8080, () => {
