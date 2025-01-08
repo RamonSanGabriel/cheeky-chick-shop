@@ -1,18 +1,17 @@
-import express from 'express';
-import cors from 'cors';
+import { app } from './app.js';
+import dotenv from 'dotenv';
+import mongoose from 'mongoose';
 
-const app = express();
+dotenv.config();
 
-const corsOptions = {
-  origin: 'http://localhost:5173',
-};
+const { DB_HOST, PORT = 8080 } = process.env;
 
-app.use(cors(corsOptions));
-
-app.get('/api', (req, res) => {
-  res.json({ message: ['Hi', 'Hello', 'How are you'] });
-});
-
-app.listen(8080, () => {
-  console.log('Server is running on port 8080');
-});
+mongoose
+  .connect(DB_HOST)
+  .then(() => {
+    app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
+    console.log('Database connect successfully');
+  })
+  .catch((error) =>
+    console.log(`Server not running. Error message:${error.message}`)
+  );
