@@ -13,6 +13,7 @@ const MoviePage = lazy(() => import('../pages/MoviePage/MoviePage'));
 const ProductDetailsPage = lazy(() =>
   import('../pages/ProductDetailsPage/ProductDetailsPage')
 );
+const Footer = lazy(() => import('./Footer/Footer'));
 
 const App = () => {
   return (
