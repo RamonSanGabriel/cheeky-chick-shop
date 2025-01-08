@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import css from './Header.module.css';
-const Header = () => {
+import css from './HomePage.module.css';
+
+const HomePage = () => {
   const [array, setArray] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -39,7 +40,7 @@ const Header = () => {
   }
 
   return (
-    <div>
+    <div className={css.headerContainer}>
       {array.map((array) => {
         return (
           <div key={array.id}>
@@ -56,4 +57,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HomePage;
