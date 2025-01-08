@@ -48,8 +48,7 @@ const HomePage = () => {
               <img src={array.imgUrl} alt="" />
             </div>
             <h2>{array.name}</h2>
-            <p>{array.email}</p>
-            <p>{array.price}</p>
+            <p>Price: {array.price}</p>
           </div>
         );
       })}
