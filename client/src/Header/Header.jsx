@@ -1,37 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-// import { router } from '../../../server/routes/api/messageRouter';
-
-/* const Header = () => {
-  const [array, setArray] = useState([]);
-
-  const fetchAPI = async () => {
-    const response = await axios.get('http://localhost:8080');
-    setArray(response.data.mockData);
-    // setArray(mockData);
-    console.log(response.data.mockData);
-  };
-
-  useEffect(() => {
-    (async () => {
-      try {
-      } catch (error) {
-        console.error(error);
-      }
-    })();
-  }, []);
-  return (
-    <div>
-      {array.map((contacts, index) => (
-        <div key={index}>
-          <p>{contacts}</p>
-        </div>
-      ))}
-    </div>
-  );
-}; */
-
 const Header = () => {
   const [array, setArray] = useState([]);
   const [error, setError] = useState(null);
