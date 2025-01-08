@@ -1,0 +1,7 @@
+.headerImageContainer {
+  max-width: 100px;
+
+  & img {
+    width: 100%;
+  }
+}

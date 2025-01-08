@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-
+import css from './Header.module.css';
 const Header = () => {
   const [array, setArray] = useState([]);
   const [error, setError] = useState(null);
@@ -43,8 +43,12 @@ const Header = () => {
       {array.map((array) => {
         return (
           <div key={array.id}>
+            <div className={css.headerImageContainer}>
+              <img src={array.imgUrl} alt="" />
+            </div>
             <h2>{array.name}</h2>
             <p>{array.email}</p>
+            <p>{array.price}</p>
           </div>
         );
       })}
