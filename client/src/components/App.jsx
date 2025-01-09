@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import SharedLayout from './SharedLayout/SharedLayout';
 
 import css from './App.module.css';
@@ -11,7 +11,6 @@ import css from './App.module.css';
 // import Product from './components/Product/Product';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
-const MoviePage = lazy(() => import('../pages/MoviePage/MoviePage'));
 const ProductDetailsPage = lazy(() =>
   import('../pages/ProductDetailsPage/ProductDetailsPage')
 );
