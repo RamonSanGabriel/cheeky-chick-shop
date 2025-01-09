@@ -11,9 +11,9 @@ import css from './App.module.css';
 // import Product from './components/Product/Product';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
-const ProductDetailsPage = lazy(() =>
+/* const ProductDetailsPage = lazy(() =>
   import('../pages/ProductDetailsPage/ProductDetailsPage')
-);
+); */
 const Footer = lazy(() => import('./Footer/Footer'));
 
 const App = () => {
@@ -22,8 +22,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<SharedLayout />} />
         <Route index element={<HomePage />} />
-        <Route path="products" element={<MoviePage />} />
-        <Route path="products/:productsId" element={<ProductDetailsPage />} />
+        {/* <Route path="products" element={<MoviePage />} /> */}
+        {/* <Route path="products/:productsId" element={<ProductDetailsPage />} /> */}
         {/* <Route path="footer" element={<Footer />} /> */}
       </Routes>
       {/*  <Header />
