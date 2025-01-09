@@ -14,7 +14,7 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false);
 
   axios.defaults.withCredentials = true;
-  const fetchAPI = async (req, res) => {
+  const fetchAPI = async () => {
     setLoading(true);
     try {
       const response = await axios.get('http://localhost:8080/api/contacts');
