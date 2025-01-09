@@ -12,6 +12,7 @@ const HomePage = () => {
   const [array, setArray] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
   axios.defaults.withCredentials = true;
   const fetchAPI = async (req, res) => {
     setLoading(true);
