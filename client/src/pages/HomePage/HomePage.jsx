@@ -1,6 +1,10 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import css from './HomePage.module.css';
+import Header from '../../components/Header/Header';
+import NavBar from '../../components/NavBar/NavBar';
+import Information from '../../components/Information/Information';
+import Footer from '../../components/Footer/Footer';
 
 const HomePage = () => {
   const [array, setArray] = useState([]);
@@ -40,7 +44,9 @@ const HomePage = () => {
   }
 
   return (
-    <div className={css.headerContainer}>
+    <div>
+      <Header />
+      <NavBar />
       {array.map((array) => {
         return (
           <div key={array.id}>
@@ -52,6 +58,8 @@ const HomePage = () => {
           </div>
         );
       })}
+      <Information />
+      <Footer />
     </div>
   );
 };

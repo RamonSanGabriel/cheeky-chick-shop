@@ -16,6 +16,7 @@ app.use(cors(corsOptions));
 
 app.use('/api/contacts', messageRouter);
 app.use(express.json());
+app.use(express.static('public'));
 
 app.use((req, res) => {
   res.status(404).send({ message: 'Not found' });
