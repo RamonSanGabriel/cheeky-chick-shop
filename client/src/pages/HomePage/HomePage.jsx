@@ -47,17 +47,19 @@ const HomePage = () => {
     <div>
       <Header />
       <NavBar />
-      {array.map((array) => {
-        return (
-          <div key={array.id}>
-            <div className={css.headerImageContainer}>
-              <img src={array.imgUrl} alt="" />
+      <div className={css.productArrContainer}>
+        {array.map((array) => {
+          return (
+            <div key={array.id}>
+              <div className={css.headerImageContainer}>
+                <img src={array.imgUrl} alt="" />
+              </div>
+              <h2>{array.name}</h2>
+              <p>Price: {array.price}</p>
             </div>
-            <h2>{array.name}</h2>
-            <p>Price: {array.price}</p>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
       <Information />
       <Footer />
     </div>
