@@ -5,14 +5,17 @@ import { nanoid } from 'nanoid';
 
 const router = express.Router();
 
-router.get('/', async (req, res, next) => {
-  try {
-    const contacts = await listAllContacts();
-    res.json(contacts);
-  } catch (error) {
-    next(error);
+router.get(
+  'https://cheeky-chick-shop-backend.vercel.app/',
+  async (req, res, next) => {
+    try {
+      const contacts = await listAllContacts();
+      res.json(contacts);
+    } catch (error) {
+      next(error);
+    }
   }
-});
+);
 router.get('/:contactId', async (req, res, next) => {
   try {
     const { contactId } = req.params;
