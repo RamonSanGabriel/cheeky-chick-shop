@@ -5,7 +5,7 @@ import Information from '../../components/Information/Information';
 import Footer from '../../components/Footer/Footer';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
+
 import { Loader } from '../../components/Loader/Loader';
 
 const HomePage = () => {
@@ -41,7 +41,11 @@ const HomePage = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   }
 
   if (error) {
