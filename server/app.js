@@ -23,11 +23,11 @@ app.use('/api/contacts', messageRouter);
 app.use(express.json());
 app.use(express.static('public'));
 
-app.use((req, res) => {
+app.use((_req, res) => {
   res.status(404).send({ message: 'Not found' });
 });
 
-app.use((err, req, res, next) => {
+app.use((err, _req, res, _next) => {
   res.status(500).json({ message: err.message });
 });
 
