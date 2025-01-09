@@ -17,9 +17,7 @@ const HomePage = () => {
     setLoading(true);
     try {
       // const response = await axios.get('http://localhost:8080/api/contacts');
-      const response = await axios.get(
-        'https://cheeky-chick-shop-lnxq.vercel.app/'
-      );
+      const response = await axios.get('https://cheeky-chick-shop.vercel.app/');
 
       setArray(response.data);
       console.log(response.data);
