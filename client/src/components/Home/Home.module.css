@@ -4,7 +4,6 @@
   gap: 20px;
   padding: 20px;
   justify-content: center;
-  border: 2px solid green;
 
   & li {
     list-style: none;
@@ -15,11 +14,9 @@
   text-align: center;
   margin: 0;
   padding: 0;
-  /* border: 2px solid red; */
 }
 .productImage {
   margin: 0 auto;
-  /* border: 2px solid purple; */
   object-fit: contain;
 }
 
@@ -29,7 +26,6 @@
 }
 .productImageContainer {
   width: 100%;
-  /* border: 2px solid black; */
 
   & img {
     width: 100%;
