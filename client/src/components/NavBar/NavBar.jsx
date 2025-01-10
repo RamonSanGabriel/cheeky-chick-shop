@@ -17,12 +17,12 @@ const NavBar = () => {
       </p>
 
       <div>
-        <form>
+        <form role="search">
           <input
             className={css.navSearch}
             type="search"
             placeholder="Search"
-            // aria-label="Search"
+            aria-label="Search"
           />
           {/*     <button className={css.link} type="submit">
             Search
