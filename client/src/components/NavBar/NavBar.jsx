@@ -20,32 +20,7 @@ const NavBar = () => {
           <button type="submit">Search</button>
         </form>
       </div>
-      {/*  <ul>
-        <li>
-          <a
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            User
-          </a>
-          <ul>
-            <li>
-              <a href="#">Profile</a>
-            </li>
-            <li>
-              <a href="#">Product</a>
-            </li>
-            <li>
-              <hr />
-            </li>
-            <li>
-              <a href="#">Logout</a>
-            </li>
-          </ul>
-        </li>
-      </ul> */}
+
       <MdOutlineMenu
         className={`${css.hamburgerIcon} ${
           isSidebarOpen && css.visuallyHidden
