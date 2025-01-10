@@ -11,7 +11,7 @@ export const navLinks = [
     path: '/logout',
   },
   {
-    id: 1,
+    id: 3,
     link: 'Home',
     path: '/home',
   },
