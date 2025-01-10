@@ -2,8 +2,9 @@
   display: flex;
   justify-content: space-between;
   padding: 0.5rem;
-  background-color: hsla(210, 11%, 15%, 0.159);
   gap: 5px;
+  background-color: #f5f5f5;
+  /* background-color: hsla(210, 11%, 15%, 0.159); */
 
   & h6 {
     text-transform: uppercase;

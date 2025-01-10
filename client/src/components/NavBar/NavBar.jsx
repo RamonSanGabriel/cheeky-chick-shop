@@ -2,12 +2,19 @@ import css from './NavBar.module.css';
 import { MdOutlineMenu } from 'react-icons/md';
 import { Sidebar } from '../Sidebar/Sidebar';
 import { useToggle } from '../../hooks/useToggle';
+import { navLinks } from '../../data/nav-links';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   const { isOpen: isSidebarOpen, toggle: toggleSidebar } = useToggle(false);
+  const burgerMenu = true;
   return (
     <nav className={css.navBar}>
-      <a href="#">Home</a>
+      <p>
+        <a className={css.link} href="#">
+          Home
+        </a>
+      </p>
 
       <div>
         <form role="search">
@@ -17,16 +24,45 @@ const NavBar = () => {
             placeholder="Search"
             aria-label="Search"
           />
-          <button type="submit">Search</button>
+          <button className={css.link} type="submit">
+            Search
+          </button>
         </form>
       </div>
+      {burgerMenu ? (
+        <div className={css.dropDown}>
+          <p>
+            <a className={css.link}>
+              User
+              {/* <i className={css.faCaretDown}></i> */}
+            </a>
+          </p>
+          <div className={css.dropdownContent}>
+            <ul className={css.linkList}>
+              {navLinks.map(({ id, link, path }) => (
+                <li key={id}>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? css.linkActive : css.link
+                    }
+                    to={path}
+                  >
+                    {link}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ) : (
+        <MdOutlineMenu
+          className={`${css.hamburgerIcon} ${
+            isSidebarOpen && css.visuallyHidden
+          }`}
+          onClick={toggleSidebar}
+        />
+      )}
 
-      <MdOutlineMenu
-        className={`${css.hamburgerIcon} ${
-          isSidebarOpen && css.visuallyHidden
-        }`}
-        onClick={toggleSidebar}
-      />
       <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
     </nav>
   );

@@ -5,22 +5,28 @@
 
   /* color-scheme: light dark; */
   /* color: rgba(255, 255, 255, 0.87); */
-  /* background-color: #242424; */
-  background-color: #f5f5f5;
+  color: #242424;
+  /* background-color: #f5f5f5; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --PRIMARY: #e76f51; /* #e85d04; */
+  --SECONDARY: #f4a261; /* #f48c06 */
+  --DARK: #264653; /* #303030 */
+  --LIGHT: #edf2f4;
 }
 
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
+  cursor: pointer;
 }
 a:hover {
   color: #535bf2;
+  cursor: pointer;
 }
 
 body {

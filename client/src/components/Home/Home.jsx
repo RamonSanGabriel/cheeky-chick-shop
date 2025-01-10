@@ -53,32 +53,41 @@ const Home = () => {
     return <div>Error: {error}</div>;
   }
   return (
-    <div>
+    <>
       <Header />
       <NavBar />
       <div className={css.productArrContainer}>
         {array.map((array) => {
           return (
             <div className={css.productContainer} key={array.id}>
-              <ul className={css.productList}>
-                <div className={css.productImageContainer}>
-                  <img src={array.imgUrl} alt="" />
-                </div>
-
-                <li>
-                  <h2 className={css.productName}>{array.name}</h2>
-                </li>
-                <li>
-                  <p>Price: {array.price}</p>
-                </li>
-              </ul>
+              <div className={css.productImageContainer}>
+                <img
+                  className={css.productImage}
+                  src={array.imgUrl}
+                  alt={array.name}
+                />
+              </div>
+              <div>
+                <ul className={css.productList}>
+                  <div className={css.productImageName}>
+                    <li>
+                      <h2 className={css.productName}>{array.name}</h2>
+                    </li>
+                  </div>
+                  <div>
+                    <li>
+                      <p>Price: {array.price}</p>
+                    </li>
+                  </div>
+                </ul>
+              </div>
             </div>
           );
         })}
       </div>
       <Information />
       <Footer />
-    </div>
+    </>
   );
 };
 

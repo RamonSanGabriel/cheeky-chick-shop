@@ -1,4 +1,18 @@
-import css from './Header.module.css';
+import React from 'react';
+
+const Header = () => {
+  return (
+    <div>
+      <header>
+        <p>Logo</p>
+      </header>
+    </div>
+  );
+};
+
+export default Header;
+
+/* import css from './Header.module.css';
 import logo from '../../images/cheekyChickShop.jpg';
 
 const Header = () => {
@@ -15,3 +29,4 @@ const Header = () => {
 };
 
 export default Header;
+ */
