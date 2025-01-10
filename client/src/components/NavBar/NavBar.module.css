@@ -6,9 +6,10 @@
   padding: 1rem 0;
 }
 .navSearch {
-  /* width: 100%; */
-  max-width: 650px;
-  width: 425px;
+  width: 100%;
+  /* max-width: 650px; */
+  min-width: 280px;
+  /* width: 425px; */
 }
 
 .dropDown {
