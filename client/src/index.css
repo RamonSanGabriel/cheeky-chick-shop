@@ -55,6 +55,12 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 /* button:hover {
   border-color: #646cff;
 } */
