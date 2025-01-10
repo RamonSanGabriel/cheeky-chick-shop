@@ -1,6 +1,6 @@
 .productArrContainer {
   display: flex;
-  /* background-color: #f0f0f0; */
+  background-color: #fff;
   gap: 20px;
   padding: 20px;
   justify-content: center;
