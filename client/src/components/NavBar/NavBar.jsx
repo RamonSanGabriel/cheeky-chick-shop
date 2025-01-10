@@ -9,10 +9,17 @@ const NavBar = () => {
     <nav className={css.navBar}>
       <a href="#">Home</a>
 
-      <form role="search">
-        <input type="search" placeholder="Search" aria-label="Search" />
-        <button type="submit">Search</button>
-      </form>
+      <div>
+        <form role="search">
+          <input
+            className={css.navSearch}
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button type="submit">Search</button>
+        </form>
+      </div>
       {/*  <ul>
         <li>
           <a
