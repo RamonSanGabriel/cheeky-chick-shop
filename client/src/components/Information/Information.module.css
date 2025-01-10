@@ -13,4 +13,25 @@
     margin-top: 2.5rem;
     margin-bottom: 0.5rem;
   }
+  & li {
+    cursor: pointer;
+
+    & p {
+      display: inline;
+    }
+    &:hover p {
+      color: hsl(10, 85%, 55%);
+    }
+    & p {
+      @media (width < 767px) {
+        font-size: 0.5rem;
+      }
+    }
+  }
+
+  & h6 {
+    @media (width < 767px) {
+      font-size: 0.5rem;
+    }
+  }
 }
