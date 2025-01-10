@@ -10,4 +10,9 @@ export const navLinks = [
     link: 'Logout',
     path: '/logout',
   },
+  {
+    id: 1,
+    link: 'Home',
+    path: '/home',
+  },
 ];
