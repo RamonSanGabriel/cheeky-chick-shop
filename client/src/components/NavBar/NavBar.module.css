@@ -6,7 +6,9 @@
   padding: 1rem 0;
 }
 .navSearch {
-  width: 50%;
+  /* width: 100%; */
+  max-width: 650px;
+  width: 425px;
 }
 
 .dropDown {
