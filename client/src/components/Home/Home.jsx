@@ -18,7 +18,7 @@ const Home = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        'https://cheeky-chick-shop-server.onrender.com'
+        'https://cheeky-chick-shop-server.onrender.com/api/contacts'
       );
       /*     const response = await axios.get(
         'https://cheeky-chick-shop-backend.vercel.app/'
