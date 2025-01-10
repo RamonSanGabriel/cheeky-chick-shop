@@ -17,7 +17,9 @@ const Home = () => {
   const fetchAPI = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:8080/api/contacts');
+      const response = await axios.get(
+        'https://cheeky-chick-shop-server.onrender.com'
+      );
       /*     const response = await axios.get(
         'https://cheeky-chick-shop-backend.vercel.app/'
       ); */
