@@ -10,7 +10,7 @@ const NavBar = () => {
 
   return (
     <nav className={css.navBar}>
-      <p>
+      <p className={css.navHome}>
         <a className={css.link} href="#">
           Home
         </a>
