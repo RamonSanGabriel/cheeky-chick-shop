@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   const { isOpen: isSidebarOpen, toggle: toggleSidebar } = useToggle(false);
-  const burgerMenu = true;
+
   return (
     <nav className={css.navBar}>
       <p>
@@ -29,39 +29,38 @@ const NavBar = () => {
           </button> */}
         </form>
       </div>
-      {burgerMenu ? (
-        <div className={css.dropDown}>
-          <p>
-            <a className={css.link}>
-              User
-              {/* <i className={css.faCaretDown}></i> */}
-            </a>
-          </p>
-          <div className={css.dropdownContent}>
-            <ul className={css.linkList}>
-              {navLinks.map(({ id, link, path }) => (
-                <li key={id}>
-                  <NavLink
-                    className={({ isActive }) =>
-                      isActive ? css.linkActive : css.link
-                    }
-                    to={path}
-                  >
-                    {link}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-          </div>
+
+      <div className={css.dropDown}>
+        <p>
+          <a className={css.link} href="#">
+            User
+            {/* <i className={css.faCaretDown}></i> */}
+          </a>
+        </p>
+        <div className={css.dropdownContent}>
+          <ul className={css.linkList}>
+            {navLinks.map(({ id, link, path }) => (
+              <li key={id}>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? css.linkActive : css.link
+                  }
+                  to={path}
+                >
+                  {link}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
         </div>
-      ) : (
-        <MdOutlineMenu
-          className={`${css.hamburgerIcon} ${
-            isSidebarOpen && css.visuallyHidden
-          }`}
-          onClick={toggleSidebar}
-        />
-      )}
+      </div>
+
+      <MdOutlineMenu
+        className={`${css.hamburgerIcon} ${
+          isSidebarOpen && css.visuallyHidden
+        }`}
+        onClick={toggleSidebar}
+      />
 
       <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
     </nav>

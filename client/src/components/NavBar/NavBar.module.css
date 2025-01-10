@@ -15,6 +15,10 @@
 .dropDown {
   float: left;
   overflow: hidden;
+
+  @media (width < 768px) {
+    display: none;
+  }
 }
 
 .dropBtn {
@@ -81,4 +85,11 @@
   composes: link;
   color: var(--PRIMARY);
   font-weight: 700;
+}
+.hamburgerIcon {
+  display: flex;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }
