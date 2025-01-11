@@ -7,20 +7,14 @@
   justify-content: center;
   margin: 0 0.5rem;
 
-  & li {
-    list-style: none;
-  }
-
   @media (width < 768px) {
-    flex-direction: column;
-    align-items: center;
   }
 }
 
 .productContainer {
   text-align: center;
-  margin: 0;
-  padding: 0;
+  /* margin: 0; */
+  /* padding: 0; */
 }
 .productImage {
   margin: 0 auto;

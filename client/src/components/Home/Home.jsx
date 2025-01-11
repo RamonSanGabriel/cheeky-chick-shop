@@ -55,7 +55,7 @@ const Home = () => {
       <Header />
       <NavBar />
       <div className={css.productArrContainer}>
-        {array.map((array, index) => {
+        {array.map((array) => {
           return (
             <div className={css.productContainer} key={array.id}>
               <div className={css.productImageContainer}>
