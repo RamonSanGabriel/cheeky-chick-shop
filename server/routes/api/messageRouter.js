@@ -18,7 +18,7 @@ router.get('/:productId', async (req, res, next) => {
     const { productId } = req.params;
     console.log(productId);
 
-    const product = mockData.find(
+    const product = await listAllProducts.find(
       (product) => product.id === parseInt(productId)
     );
 

@@ -25,9 +25,9 @@ const NavBar = () => {
               placeholder="Search"
               aria-label="Search"
             />
-            {/*     <button className={css.link} type="submit">
-            Search
-          </button> */}
+            <button className={css.link} type="submit">
+              Search
+            </button>
           </form>
         </div>
 

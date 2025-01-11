@@ -13,8 +13,7 @@ const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
 }; */
 const corsOptions = {
   origin: [
-    // 'https://cheeky-chick-shop-frontend.vercel.app/',
-    'http://localhost:5173',
+    // 'http://localhost:5173',
     'https://dummyjson.com/products',
   ],
   methods: ['GET', 'POST'],
