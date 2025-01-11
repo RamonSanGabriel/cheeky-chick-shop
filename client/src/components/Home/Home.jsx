@@ -67,7 +67,7 @@ const Home = () => {
               <div className={css.productImageContainer}>
                 <img
                   className={css.productImage}
-                  src={array.images}
+                  src={array.images[0]}
                   alt={array.title}
                 />
               </div>

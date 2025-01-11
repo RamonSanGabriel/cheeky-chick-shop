@@ -1,9 +1,12 @@
 .productArrContainer {
   display: flex;
+  flex-wrap: wrap;
   background-color: #fff;
   gap: 20px;
   padding: 20px;
   justify-content: center;
+  margin: 0 0.5rem;
+  /* max-width: 1200px; */
 
   & li {
     list-style: none;

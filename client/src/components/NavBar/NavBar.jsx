@@ -17,7 +17,7 @@ const NavBar = () => {
           </a>
         </p>
 
-        <div>
+        <div className={css.formContainer}>
           <form role="search">
             <input
               className={css.navSearch}
