@@ -1,7 +1,7 @@
 .informationWrapper {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem;
+  padding: 8px 20px;
   gap: 5px;
   background-color: #e7e5e5;
   /* background-color: hsla(210, 11%, 15%, 0.159); */

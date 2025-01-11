@@ -1,6 +1,6 @@
 .navBarContainer {
   padding: 8px 20px;
-  margin: 0 8px;
+  margin: 0 auto;
 
   & form {
     display: flex;
