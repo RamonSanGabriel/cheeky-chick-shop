@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding: 8px 20px;
+  margin: 0 8px;
   gap: 5px;
   background-color: #e7e5e5;
   /* background-color: hsla(210, 11%, 15%, 0.159); */
