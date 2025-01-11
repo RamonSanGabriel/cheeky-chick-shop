@@ -1,5 +1,5 @@
 import express from 'express';
-import { listAllContacts } from '../../models/mockData.js';
+import { listAllProducts } from '../../models/mockData.js';
 import bodyParser from 'body-parser';
 import { nanoid } from 'nanoid';
 
@@ -7,25 +7,25 @@ const router = express.Router();
 
 router.get('/', async (req, res, next) => {
   try {
-    const contacts = await listAllContacts();
-    res.json(contacts);
+    const products = await listAllProducts();
+    res.json(products);
   } catch (error) {
     next(error);
   }
 });
-router.get('/:contactId', async (req, res, next) => {
+router.get('/:productId', async (req, res, next) => {
   try {
-    const { contactId } = req.params;
-    console.log(contactId);
+    const { productId } = req.params;
+    console.log(productId);
 
-    const contact = mockData.find(
-      (contact) => contact.id === parseInt(contactId)
+    const product = mockData.find(
+      (product) => product.id === parseInt(productId)
     );
 
-    if (!contact) {
+    if (!product) {
       res.status(404).json({ message: 'Contact not found' });
     } else {
-      res.json(contact);
+      res.json(product);
     }
   } catch (error) {
     next(error);
@@ -34,12 +34,12 @@ router.get('/:contactId', async (req, res, next) => {
 });
 router.post('/', bodyParser.json(), async (req, res, next) => {
   try {
-    const { username, email } = req.body;
+    const { title, price, images } = req.body;
 
-    const newContact = { id: nanoid(), username, email };
-    listAllContacts.push(newContact);
+    const newProduct = { id: nanoid(), title, price, images };
+    listAllProducts.push(newProduct);
 
-    res.status(201).json(newContact);
+    res.status(201).json(newProduct);
   } catch (error) {
     next(error);
   }
