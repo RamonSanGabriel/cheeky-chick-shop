@@ -13,23 +13,23 @@ const Home = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  axios.defaults.withCredentials = true;
+  axios.defaults.withCredentials = false;
   const fetchAPI = async () => {
     setLoading(true);
     try {
       const response = await axios.get(
         'https://dummyjson.com/products'
         // 'https://cheeky-chick-shop-server.onrender.com/'
-        // 'https://localhost:8080/api/contacts'
+        // 'https://localhost:8080/products'
       );
       /*     const response = await axios.get(
         'https://cheeky-chick-shop-backend.vercel.app/'
       ); */
 
-      setArray(response.data);
-      console.log(response.data);
+      setArray(response.data.products);
+      console.log(response.data.products);
     } catch (error) {
-      setError(error.contacts);
+      setError(error.products);
     } finally {
       setLoading(false);
     }
@@ -61,21 +61,21 @@ const Home = () => {
       <Header />
       <NavBar />
       <div className={css.productArrContainer}>
-        {array.map((array) => {
+        {array.map((array, index) => {
           return (
             <div className={css.productContainer} key={array.id}>
               <div className={css.productImageContainer}>
                 <img
                   className={css.productImage}
-                  src={array.imgUrl}
-                  alt={array.name}
+                  src={array.images}
+                  alt={array.title}
                 />
               </div>
               <div>
                 <ul className={css.productList}>
                   <div className={css.productImageName}>
                     <li>
-                      <h2 className={css.productName}>{array.name}</h2>
+                      <h2 className={css.productName}>{array.title}</h2>
                     </li>
                   </div>
                   <div>

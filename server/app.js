@@ -13,7 +13,7 @@ const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
 }; */
 const corsOptions = {
   origin: [
-    'https://cheeky-chick-shop-frontend.vercel.app/',
+    // 'https://cheeky-chick-shop-frontend.vercel.app/',
     'http://localhost:5173',
     'https://dummyjson.com/products',
   ],
@@ -22,9 +22,11 @@ const corsOptions = {
 };
 app.use(logger(formatsLogger));
 app.use(cors(corsOptions));
+// app.use(cors());
 
+// http://localhost:8080/api/contacts
 // app.use('/api/contacts', messageRouter);
-app.use('https://dummyjson.com/products');
+app.use('/products', messageRouter);
 app.use(express.json());
 app.use(express.static('public'));
 
