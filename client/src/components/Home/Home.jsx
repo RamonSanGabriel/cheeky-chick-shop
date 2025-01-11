@@ -65,20 +65,23 @@ const Home = () => {
                   alt={array.title}
                 />
               </div>
-              <div>
-                <ul className={css.productList}>
-                  <div className={css.productImageName}>
-                    <li>
-                      <h2 className={css.productName}>{array.title}</h2>
-                    </li>
-                  </div>
-                  <div>
-                    <li>
+
+              <ul className={css.productList}>
+                <div className={css.productImageName}>
+                  <li className={css.productName}>
+                    <div className={css.productTitle}>
+                      <h2>{array.title}</h2>
+                    </div>
+                  </li>
+                </div>
+                <div className={css.productImageName}>
+                  <li className={css.productName}>
+                    <div className={css.productTitle}>
                       <p>Price: {array.price}</p>
-                    </li>
-                  </div>
-                </ul>
-              </div>
+                    </div>
+                  </li>
+                </div>
+              </ul>
             </div>
           );
         })}
