@@ -2,14 +2,6 @@ import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from './SharedLayout/SharedLayout';
 
-// import css from './App.module.css';
-// import MovieDetailsPage from '../pages/MovieDetailsPage/MovieDetailsPage';
-// import NavBar from './components/NavBar/NavBar';
-// import Header from './components/Header/Header';
-// import Information from './components/Information/Information';
-// import Footer from './components/Footer/Footer';
-// import Product from './components/Product/Product';
-
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 /* const ProductDetailsPage = lazy(() =>
   import('../pages/ProductDetailsPage/ProductDetailsPage')

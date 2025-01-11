@@ -7,10 +7,9 @@
 }
 .navBar {
   display: flex;
-  /* width: 100%; */
+  padding: 8px;
   justify-content: space-between;
   align-items: center;
-  /* padding: 1rem 0; */
   gap: 0.625rem;
   margin: 0 auto;
 }
@@ -24,8 +23,6 @@
   width: 100%;
   padding: 0 5px;
   min-width: 280px;
-
-  /* width: 425px; */
 }
 
 .dropDown {
@@ -47,7 +44,6 @@
   font-size: 16px;
   border: none;
   outline: none;
-  /* color: white; */
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;

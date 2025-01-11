@@ -13,7 +13,7 @@ const Logo = () => {
       >
         <div className={css.logoContainer}>
           <img
-            className={css.headerLogo}
+            className={css.logoHeader}
             src={logo}
             alt="Cheeky Chick Shop Logo"
           />

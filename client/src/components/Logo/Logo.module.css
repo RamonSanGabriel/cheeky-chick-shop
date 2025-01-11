@@ -1,5 +1,4 @@
 .link {
-  padding: 8px 16px;
   border-radius: 4px;
   text-decoration: none;
   color: var(--DARK);
@@ -23,20 +22,16 @@
 .logoContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
-  /* margin: 0 auto; */
-  /* padding: 1.25rem 0 2.5rem; */
+  align-items: flex-end;
 
   & h2 {
-    text-transform: uppercase;
     font-size: 1.5rem;
     margin: 0;
   }
 }
 
-.headerLogo {
-  margin: 1rem 0.5rem;
-  /* width: 48px; */
+.logoHeader {
+  margin-right: 0.5rem;
   height: 36px;
   border-radius: 50px;
 }
