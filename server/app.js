@@ -23,7 +23,8 @@ const corsOptions = {
 app.use(logger(formatsLogger));
 app.use(cors(corsOptions));
 
-app.use('/api/contacts', messageRouter);
+// app.use('/api/contacts', messageRouter);
+app.use('https://dummyjson.com/products');
 app.use(express.json());
 app.use(express.static('public'));
 

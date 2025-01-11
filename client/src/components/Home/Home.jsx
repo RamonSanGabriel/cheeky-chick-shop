@@ -18,7 +18,8 @@ const Home = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        'https://cheeky-chick-shop-server.onrender.com/api/contacts'
+        'https://dummyjson.com/products'
+        // 'https://cheeky-chick-shop-server.onrender.com/'
         // 'https://localhost:8080/api/contacts'
       );
       /*     const response = await axios.get(
