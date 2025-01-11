@@ -31,12 +31,18 @@
 .dropDown {
   float: left;
   overflow: hidden;
-
+  text-align: center;
   @media (width < 768px) {
     display: none;
   }
 }
-
+.dropDownUser {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
 .dropBtn {
   font-size: 16px;
   border: none;

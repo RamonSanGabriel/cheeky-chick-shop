@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import logger from 'morgan';
 
-import { router as messageRouter } from './routes/api/messageRouter.js';
+import { router as productRouter } from './routes/api/productRouter.js';
 
 const app = express();
 
@@ -25,7 +25,7 @@ app.use(cors(corsOptions));
 
 // http://localhost:8080/api/contacts
 // app.use('/api/contacts', messageRouter);
-app.use('/products', messageRouter);
+app.use('/products', productRouter);
 app.use(express.json());
 app.use(express.static('public'));
 

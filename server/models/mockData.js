@@ -13,4 +13,19 @@ const listAllProducts = async () => {
   }
 };
 
-export { listAllProducts };
+const listAllProductsById = async () => {
+  try {
+    const products = await fs.readFile(productsPath);
+    return JSON.parse(products);
+  } catch (error) {
+    console.error('Error reading message', error.message);
+  }
+};
+
+const fetchData = (value) => {
+  const products = listAllProducts();
+  const product = products.find((product) => product.id === value);
+  return product;
+};
+
+export { listAllProducts, fetchData };

@@ -5,7 +5,6 @@ import Information from '../../components/Information/Information';
 import Footer from '../../components/Footer/Footer';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import { Loader } from '../../components/Loader/Loader';
 
 const Home = () => {
@@ -18,18 +17,13 @@ const Home = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        'https://dummyjson.com/products'
-        // 'https://cheeky-chick-shop-server.onrender.com/'
         // 'https://localhost:8080/products'
+        'https://dummyjson.com/products'
       );
-      /*     const response = await axios.get(
-        'https://cheeky-chick-shop-backend.vercel.app/'
-      ); */
-
       setArray(response.data.products);
       console.log(response.data.products);
     } catch (error) {
-      setError(error.products);
+      setError(error.data);
     } finally {
       setLoading(false);
     }
