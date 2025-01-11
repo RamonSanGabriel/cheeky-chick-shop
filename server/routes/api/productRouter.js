@@ -1,8 +1,8 @@
 import express from 'express';
-// import { listAllProducts } from '../../models/mockData.js';
+import { listAllProducts } from '../../models/mockData.js';
 import bodyParser from 'body-parser';
 import { nanoid } from 'nanoid';
-import { fetchData } from '../../models/mockData';
+
 // import { getProductById } from '../../../client/src/components/NavBar/NavBar';
 
 const router = express.Router();
@@ -24,7 +24,7 @@ router.get('/:productId', async (req, res, next) => {
       (product) => product.id === parseInt(productId)
     ); */
 
-    const product = await fetchData(productId);
+    const product = await listAllProducts(productId);
 
     if (!product) {
       res.status(404).json({ message: 'Product not found' });
