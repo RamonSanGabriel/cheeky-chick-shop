@@ -1,13 +1,41 @@
-span {
-  font-size: 0.75rem;
+.followUsWrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media (width < 767px) {
+    align-items: center;
+  }
 }
+
 .socialMedia {
   cursor: pointer;
+  display: flex;
+  align-items: center;
 
   & p {
     display: inline;
   }
-  &:hover p {
-    color: hsl(10, 85%, 55%);
+}
+
+p:hover {
+  color: hsl(10, 85%, 55%);
+}
+.socialMediaSpan {
+  font-size: 0.75rem;
+
+  @media (width < 768px) {
+    font-size: 0.625rem;
+  }
+}
+.socialMediaItemContainer {
+  align-items: center;
+  justify-content: center;
+}
+.followUsContainer {
+  display: flex;
+  justify-content: space-around;
+
+  @media (width < 767px) {
+    flex-direction: column;
   }
 }

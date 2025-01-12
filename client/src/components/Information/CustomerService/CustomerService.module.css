@@ -1,13 +1,35 @@
-span {
-  font-size: 0.75rem;
+.serviceWrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media (width < 767px) {
+    align-items: center;
+  }
 }
-.customerService {
+.serviceContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (width > 767px) {
+    flex-direction: row;
+  }
+}
+.service {
   cursor: pointer;
+  display: flex;
 
   & p {
     display: inline;
   }
-  &:hover p {
-    color: hsl(10, 85%, 55%);
+}
+p:hover {
+  color: hsl(10, 85%, 55%);
+}
+.serviceSpan {
+  font-size: 0.75rem;
+
+  @media (width < 768px) {
+    font-size: 0.625rem;
   }
 }

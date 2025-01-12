@@ -5,28 +5,30 @@ import gcash from '../../../images/gcashLogo.png';
 
 const Payment = () => {
   return (
-    <div>
+    <div className={css.paymentWrapper}>
       <h6>Payment</h6>
       <ul>
-        <li className={css.socialMedia}>
-          <span>
-            <img className={css.paymentLogo} src={bdo} alt="BDO Logo" />
-          </span>
-        </li>
-        <li className={css.socialMedia}>
-          <span>
-            <img className={css.paymentLogo} src={bpi} alt="BPI Logo" />
-          </span>
-        </li>
-        <li className={css.socialMedia}>
-          <span>
-            <img
-              className={css.paymentLogoGcash}
-              src={gcash}
-              alt="Gcash Logo"
-            />
-          </span>
-        </li>
+        <div className={css.paymentLogoContainer}>
+          <li className={css.payment}>
+            <span className={css.paymentSpan}>
+              <img className={css.paymentLogo} src={bdo} alt="BDO Logo" />
+            </span>
+          </li>
+          <li className={css.payment}>
+            <span className={css.paymentSpan}>
+              <img className={css.paymentLogo} src={bpi} alt="BPI Logo" />
+            </span>
+          </li>
+          <li className={css.payment}>
+            <span className={css.paymentSpan}>
+              <img
+                className={css.paymentLogoGcash}
+                src={gcash}
+                alt="Gcash Logo"
+              />
+            </span>
+          </li>
+        </div>
       </ul>
     </div>
   );

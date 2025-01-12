@@ -1,18 +1,36 @@
-span {
-  font-size: 0.75rem;
+.paymentWrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media (width < 767px) {
+    align-items: center;
+  }
 }
-.socialMedia {
+
+.payment {
   cursor: pointer;
 
   & p {
     display: inline;
   }
-  &:hover p {
-    color: hsl(10, 85%, 55%);
+}
+p:hover {
+  color: hsl(10, 85%, 55%);
+}
+.paymentSpan {
+  display: flex;
+}
+.paymentLogoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  @media (width < 767px) {
+    flex-direction: column;
   }
 }
-
 .paymentLogo {
+  display: flex;
   height: 1rem;
 }
 .paymentLogoGcash {

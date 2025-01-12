@@ -1,8 +1,40 @@
-span {
-  font-size: 0.75rem;
-}
-.infoHeaderContainer {
+.aboutUsWrapper {
+  display: flex;
+  flex-direction: column;
+
   @media (width < 767px) {
-    color: red;
+    align-items: center;
+  }
+}
+
+.aboutUs {
+  cursor: pointer;
+  display: flex;
+
+  & p {
+    display: inline;
+  }
+}
+
+.aboutUsSpan {
+  font-size: 0.75rem;
+
+  &:hover {
+    color: hsl(10, 85%, 55%);
+  }
+
+  @media (width < 768px) {
+    font-size: 0.625rem;
+  }
+}
+
+.aboutListContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (width > 767px) {
+    flex-direction: row;
   }
 }

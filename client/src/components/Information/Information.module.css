@@ -1,11 +1,14 @@
 .informationWrapper {
-  display: flex;
-  justify-content: space-between;
+  /* display: flex; */
+  /* justify-content: space-between; */
   padding: 8px 20px;
   margin: 0 8px;
-  gap: 5px;
-  background-color: #e7e5e5;
+  grid-gap: 5px;
   /* background-color: hsla(210, 11%, 15%, 0.159); */
+  /* background-color: #e7e5e5; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* justify-content: center; */
 
   & h6 {
     text-transform: uppercase;
@@ -14,25 +17,11 @@
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
   }
-  & li {
-    cursor: pointer;
 
-    & p {
-      display: inline;
-    }
-    &:hover p {
-      color: hsl(10, 85%, 55%);
-    }
-    & p {
-      @media (width < 767px) {
-        font-size: 0.5rem;
-      }
-    }
-  }
-
-  & h6 {
-    @media (width < 767px) {
+  @media (width < 767px) {
+    h6 {
       font-size: 0.5rem;
+      font-weight: 700;
     }
   }
 }

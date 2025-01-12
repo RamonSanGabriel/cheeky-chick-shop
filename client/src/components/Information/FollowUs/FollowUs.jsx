@@ -3,27 +3,35 @@ import css from './FollowUs.module.css';
 
 const FollowUs = () => {
   return (
-    <div>
+    <div className={css.followUsWrapper}>
       <h6>Follow us</h6>
       <ul>
-        <li className={css.socialMedia}>
-          <span>
-            <FaFacebook />
-            &nbsp; <p>Facebook</p>
-          </span>
-        </li>
-        <li className={css.socialMedia}>
-          <span>
-            <FaInstagramSquare />
-            &nbsp; <p>Instagram</p>
-          </span>
-        </li>
-        <li className={css.socialMedia}>
-          <span>
-            <FaTwitterSquare />
-            &nbsp; <p>Twitter</p>
-          </span>
-        </li>
+        <div className={css.followUsContainer}>
+          <li className={css.socialMedia}>
+            <span className={css.socialMediaSpan}>
+              <div className={css.socialMediaItemContainer}>
+                <FaFacebook />
+                &nbsp; <p>Facebook</p>
+              </div>
+            </span>
+          </li>
+          <li className={css.socialMedia}>
+            <span className={css.socialMediaSpan}>
+              <div className={css.socialMediaItemContainer}>
+                <FaInstagramSquare />
+                &nbsp; <p>Instagram</p>
+              </div>
+            </span>
+          </li>
+          <li className={css.socialMedia}>
+            <span className={css.socialMediaSpan}>
+              <div className={css.socialMediaItemContainer}>
+                <FaTwitterSquare />
+                &nbsp; <p>Twitter</p>
+              </div>
+            </span>
+          </li>
+        </div>
       </ul>
     </div>
   );
