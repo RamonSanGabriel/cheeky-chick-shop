@@ -23,11 +23,13 @@
 
   & p {
     display: inline;
+
+    &:hover {
+      color: hsl(10, 85%, 55%);
+    }
   }
 }
-p:hover {
-  color: hsl(10, 85%, 55%);
-}
+
 .serviceSpan {
   font-size: 0.75rem;
 

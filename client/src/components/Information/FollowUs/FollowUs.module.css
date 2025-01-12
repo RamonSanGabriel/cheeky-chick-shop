@@ -14,12 +14,13 @@
 
   & p {
     display: inline;
+
+    &:hover {
+      color: hsl(10, 85%, 55%);
+    }
   }
 }
 
-p:hover {
-  color: hsl(10, 85%, 55%);
-}
 .socialMediaSpan {
   font-size: 0.75rem;
 
