@@ -22,17 +22,25 @@ p:hover {
 }
 .paymentLogoContainer {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  gap: 5px;
 
-  @media (width < 767px) {
-    flex-direction: column;
+  @media (width > 767px) {
+    flex-direction: row;
+    gap: 40px;
   }
 }
 .paymentLogo {
   display: flex;
-  height: 1rem;
+  height: 0.75rem;
+  @media (width > 767px) {
+    height: 1rem;
+  }
 }
 .paymentLogoGcash {
-  height: 1.5rem;
+  height: 1rem;
+  @media (width > 767px) {
+    height: 1.5rem;
+  }
 }
