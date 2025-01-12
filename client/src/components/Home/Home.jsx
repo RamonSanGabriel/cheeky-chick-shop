@@ -66,22 +66,24 @@ const Home = () => {
                 />
               </div>
 
-              <ul className={css.productList}>
-                <div className={css.productImageName}>
-                  <li className={css.productName}>
-                    <div className={css.productTitle}>
-                      <h2>{array.title}</h2>
-                    </div>
-                  </li>
-                </div>
-                <div className={css.productImageName}>
-                  <li className={css.productName}>
-                    <div className={css.productTitle}>
-                      <p>Price: {array.price}</p>
-                    </div>
-                  </li>
-                </div>
-              </ul>
+              <div className={css.productListWrapper}>
+                <ul className={css.productList}>
+                  <div className={css.productImageName}>
+                    <li className={css.productName}>
+                      <div className={css.productTitle}>
+                        <p>Price: {array.price}</p>
+                      </div>
+                    </li>
+                  </div>
+                  <div className={css.productImageName}>
+                    <li className={css.productName}>
+                      <div className={css.productTitle}>
+                        <h2>{array.title}</h2>
+                      </div>
+                    </li>
+                  </div>
+                </ul>
+              </div>
             </div>
           );
         })}

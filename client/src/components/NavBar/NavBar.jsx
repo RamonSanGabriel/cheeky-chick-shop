@@ -3,18 +3,18 @@ import { MdOutlineMenu } from 'react-icons/md';
 import { Sidebar } from '../Sidebar/Sidebar';
 import { useToggle } from '../../hooks/useToggle';
 import { navLinks } from '../../data/nav-links';
-import { NavLink, useSearchParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import { FaUser } from 'react-icons/fa';
-import { useState } from 'react';
+// import { useState } from 'react';
 // import { Loader } from '../Loader/Loader';
 // import { SearchBar } from '../SearchBar/SearchBar';
 // import axios from 'axios';
 
 const NavBar = ({ onChange, value }) => {
   const { isOpen: isSidebarOpen, toggle: toggleSidebar } = useToggle(false);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const productName = searchParams.get('query') ?? '';
+  // const [searchParams, setSearchParams] = useSearchParams();
+  // const productName = searchParams.get('query') ?? '';
 
   return (
     <div className={css.navBarContainer}>
