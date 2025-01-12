@@ -71,7 +71,7 @@ const Home = () => {
                   <div className={css.productImageName}>
                     <li className={css.productName}>
                       <div className={css.productTitle}>
-                        <p>Price: {array.price}</p>
+                        <p>₱ {array.price}</p>
                       </div>
                     </li>
                   </div>
