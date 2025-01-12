@@ -68,17 +68,26 @@ const Home = () => {
 
               <div className={css.productListWrapper}>
                 <ul className={css.productList}>
-                  <div className={css.productImageName}>
-                    <li className={css.productName}>
-                      <div className={css.productTitle}>
+                  <div className={css.productImageContent}>
+                    <li className={css.productListItem}>
+                      <div className={css.productListPrice}>
                         <p>₱ {array.price}</p>
                       </div>
                     </li>
                   </div>
-                  <div className={css.productImageName}>
-                    <li className={css.productName}>
-                      <div className={css.productTitle}>
+
+                  <div className={css.productImageContent}>
+                    <li className={css.productListItem}>
+                      <div className={css.productListTitle}>
                         <h2>{array.title}</h2>
+                      </div>
+                    </li>
+                  </div>
+
+                  <div className={css.productImageContent}>
+                    <li className={css.productListItem}>
+                      <div className={css.productListStock}>
+                        <p>Stock: {array.stock}</p>
                       </div>
                     </li>
                   </div>

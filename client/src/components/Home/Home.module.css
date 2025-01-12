@@ -50,7 +50,7 @@
     margin: 0 auto;
   }
 }
-.productImageName {
+.productImageContent {
   height: 2.125rem;
   text-align: center;
   width: 150px;
@@ -60,12 +60,13 @@
   width: 100%;
 }
 
-.productTitle {
+.productListTitle,
+.productListPrice,
+.productListStock {
   & h2,
   p {
     font-size: 0.75rem;
     text-overflow: ellipsis;
-    word-wrap: break-word;
     word-wrap: break-word;
     margin: 0;
     /* flex-shrink: 1; */
