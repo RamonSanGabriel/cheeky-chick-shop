@@ -18,9 +18,9 @@ const Logo = () => {
             alt="Cheeky Chick Shop Logo"
           />
           <h2>
-            <b>C</b>heeky
-            <b>C</b>hick
-            <b>S</b>hop
+            <span>C</span>heeky
+            <span>C</span>hick
+            <span>S</span>hop
           </h2>
         </div>
       </NavLink>
