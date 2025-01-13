@@ -1,15 +1,15 @@
 .informationWrapper {
-  /* display: flex; */
-  /* justify-content: space-between; */
+  display: grid;
+  grid-template-columns: repeat(1, 2fr);
   padding: 8px 20px;
   margin: 0 8px;
-  grid-gap: 5px;
-  /* background-color: hsla(210, 11%, 15%, 0.159); */
-  /* background-color: #e7e5e5; */
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  /* justify-content: center; */
 
+  @media (width > 767px) {
+    gap: 10px;
+    /* background-color: hsla(210, 11%, 15%, 0.159); */
+    background-color: #e7e5e5;
+    grid-template-columns: repeat(1, 1fr 2fr);
+  }
   & h6 {
     text-transform: uppercase;
     font-weight: 700;

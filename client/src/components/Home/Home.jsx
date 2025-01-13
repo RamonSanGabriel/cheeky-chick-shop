@@ -6,6 +6,7 @@ import Footer from '../../components/Footer/Footer';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Loader } from '../../components/Loader/Loader';
+import { SearchBar } from '../SearchBar/SearchBar';
 
 const Home = () => {
   const [array, setArray] = useState([]);
@@ -54,6 +55,11 @@ const Home = () => {
     <>
       <Header />
       <NavBar />
+
+      {/* prettier-ignore */}
+      {/* Add Search bar Input */}
+
+      <SearchBar />
       <div className={css.productArrContainer}>
         {array.map((array) => {
           return (

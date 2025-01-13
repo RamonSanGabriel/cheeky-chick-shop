@@ -1,56 +1,60 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { DebounceInput } from 'react-debounce-input';
 import { HiSearch } from 'react-icons/hi';
 import css from './SearchBar.module.css';
 import { useState } from 'react';
 
-export const SearchBar = ({ onChange, value, setResults }) => {
+export const SearchBar = () => {
   const [input, setInput] = useState('');
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  // const [results, setResults] = useState([]);
 
   const fetchData = (value) => {
-    fetch('https://dummyjson.com/products')
+    fetch(`https://dummyjson.com/products/search?q=${input}`)
       .then((response) => response.json())
       .then((json) => {
+        // setResults(value);
         console.log(json);
-
-        const results = json.filter((product) => {
+        /*  const results = json.filter((product) => {
           return (
-            value &&
-            product &&
-            product.title.toLowerCase().includes(value.toLowerCase())
+            product && product.title.toLowerCase().includes(value.toLowerCase())
           );
-        });
-        setResults(results);
+        }); */
+        // console.log(value);
+        // console.log(results);
       });
   };
 
   const handleChange = (value) => {
     setInput(value);
     fetchData(value);
-    // console.log(e.target.value);
   };
   /*  const handleChange = (e) => {
     onChange(e.target.value);
     console.log(handleChange);
   }; */
   return (
-    <div className={css.inputWrapper}>
-      <DebounceInput
-        className={css.input}
-        type="text"
-        value={value}
-        onChange={handleChange}
-        placeholder="Search movies..."
-        minLength={2}
-        debounceTimeout={500}
-      />
-      <HiSearch className={css.icon} />
-    </div>
+    <>
+      <form className={css.inputWrapper} action="">
+        <div className={css.inputContainer}>
+          {/* <div className={css.inputContainer}> */}
+          <DebounceInput
+            className={css.input}
+            type="text"
+            value={input}
+            onChange={(e) => handleChange(e.target.value)}
+            placeholder="Search products..."
+            minLength={2}
+            debounceTimeout={500}
+          />
+
+          <HiSearch className={css.icon} />
+          {/* </div> */}
+        </div>
+      </form>
+    </>
   );
 };
-SearchBar.propTypes = {
+/* SearchBar.propTypes = {
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
-};
+  input: PropTypes.string.isRequired,
+}; */

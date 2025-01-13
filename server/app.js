@@ -14,9 +14,9 @@ const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
 const corsOptions = {
   origin: [
     // 'http://localhost:5173',
-    'https://dummyjson.com/products',
+    'https://dummyjson.com/',
   ],
-  methods: ['GET', 'POST'],
+  methods: ['GET', 'POST', 'UPDATE', 'DELETE', 'PATCH'],
   credentials: true,
 };
 app.use(logger(formatsLogger));

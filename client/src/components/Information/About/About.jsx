@@ -8,12 +8,12 @@ const About = () => {
         <div className={css.aboutListContainer}>
           <li className={css.aboutUs}>
             <span className={css.aboutUsSpan}>
-              <p>Who we are</p>
+              <p>Who we are </p>
             </span>
           </li>
           <li className={css.aboutUs}>
             <span className={css.aboutUsSpan}>
-              <p>Policies</p>
+              <p>Policies </p>
             </span>
           </li>
           <li className={css.aboutUs}>

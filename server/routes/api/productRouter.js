@@ -1,15 +1,15 @@
 import express from 'express';
-import { listAllProducts } from '../../models/mockData.js';
+// import { listAllProducts } from '../../models/mockData.js';
 import bodyParser from 'body-parser';
 import { nanoid } from 'nanoid';
-
-// import { getProductById } from '../../../client/src/components/NavBar/NavBar';
+// prettier-ignore
+import { getAllProducts, getProductById,addProduct } from '../../controllers/productController.js';
 
 const router = express.Router();
 
 router.get('/', async (_req, res, next) => {
   try {
-    const products = await listAllProducts();
+    const products = await getAllProducts();
     res.json(products);
   } catch (error) {
     next(error);
@@ -24,7 +24,7 @@ router.get('/:productId', async (req, res, next) => {
       (product) => product.id === parseInt(productId)
     ); */
 
-    const product = await listAllProducts(productId);
+    const product = await getProductById(productId);
 
     if (!product) {
       res.status(404).json({ message: 'Product not found' });
@@ -38,10 +38,10 @@ router.get('/:productId', async (req, res, next) => {
 });
 router.post('/', bodyParser.json(), async (req, res, next) => {
   try {
-    const { title, price, images } = req.body;
+    const { title, price, images, stock } = req.body;
 
-    const newProduct = { id: nanoid(), title, price, images };
-    listAllProducts.push(newProduct);
+    const newProduct = { id: nanoid(), title, price, images, stock };
+    addProduct.push(newProduct);
 
     res.status(201).json(newProduct);
   } catch (error) {

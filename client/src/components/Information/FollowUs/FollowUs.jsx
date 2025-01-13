@@ -11,7 +11,7 @@ const FollowUs = () => {
             <span className={css.socialMediaSpan}>
               <div className={css.socialMediaItemContainer}>
                 <FaFacebook />
-                &nbsp; <p>Facebook</p>
+                {/* &nbsp; <p>Facebook</p> */}
               </div>
             </span>
           </li>
@@ -19,7 +19,7 @@ const FollowUs = () => {
             <span className={css.socialMediaSpan}>
               <div className={css.socialMediaItemContainer}>
                 <FaInstagramSquare />
-                &nbsp; <p>Instagram</p>
+                {/* &nbsp; <p>Instagram</p> */}
               </div>
             </span>
           </li>
@@ -27,7 +27,7 @@ const FollowUs = () => {
             <span className={css.socialMediaSpan}>
               <div className={css.socialMediaItemContainer}>
                 <FaTwitterSquare />
-                &nbsp; <p>Twitter</p>
+                {/* &nbsp; <p>Twitter</p> */}
               </div>
             </span>
           </li>

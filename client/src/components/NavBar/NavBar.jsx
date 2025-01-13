@@ -6,26 +6,15 @@ import { navLinks } from '../../data/nav-links';
 import { NavLink } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import { FaUser } from 'react-icons/fa';
-// import { useState } from 'react';
-// import { Loader } from '../Loader/Loader';
-// import { SearchBar } from '../SearchBar/SearchBar';
-// import axios from 'axios';
 
-const NavBar = ({ onChange, value }) => {
+const NavBar = () => {
   const { isOpen: isSidebarOpen, toggle: toggleSidebar } = useToggle(false);
-  // const [searchParams, setSearchParams] = useSearchParams();
-  // const productName = searchParams.get('query') ?? '';
 
   return (
     <div className={css.navBarContainer}>
       <nav className={css.navBar}>
         <Logo />
-        <div className={css.formContainer}>
-          <form role="search">
-            {/* prettier-ignore */}
-            {/* Add Search bar Input */}
-          </form>
-        </div>
+        <div className={css.formContainer}></div>
 
         <div className={css.dropDown}>
           <div className={css.dropDownUser}>

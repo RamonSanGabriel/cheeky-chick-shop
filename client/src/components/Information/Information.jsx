@@ -7,8 +7,8 @@ import Payment from './Payment/Payment';
 const Information = () => {
   return (
     <div className={css.informationWrapper}>
-      <CustomerService />
       <About />
+      <CustomerService />
       <Payment />
       <FollowUs />
     </div>
