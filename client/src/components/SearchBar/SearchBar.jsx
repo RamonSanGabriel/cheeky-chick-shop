@@ -3,30 +3,44 @@ import { DebounceInput } from 'react-debounce-input';
 import { HiSearch } from 'react-icons/hi';
 import css from './SearchBar.module.css';
 import { useState } from 'react';
+import SearchResults from './SearchResults/SearchResults';
+import { useSearchParams } from 'react-router-dom';
+// import { getAllProducts } from '../../../../server/controllers/productController';
+// import { httpError } from '../../../../server/helpers/httpError.js';
 
-export const SearchBar = () => {
+export const SearchBar = ({ setResults, array, results }) => {
   const [input, setInput] = useState('');
   // const [results, setResults] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  // const products = getAllProducts();
+  const productName = searchParams.get('q') ?? '';
+
+  const updateQuery = (q) => {
+    const nextParams = q !== '' ? { q } : {};
+    setSearchParams(nextParams);
+  };
+  /* 
+  const visibleProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(productName.toLowerCase())
+  ); */
 
   const fetchData = (value) => {
     fetch(`https://dummyjson.com/products/search?q=${input}`)
       .then((response) => response.json())
       .then((json) => {
-        // setResults(value);
-        console.log(json);
-        /*  const results = json.filter((product) => {
+        const result = json.filter((product) => {
           return (
             product && product.title.toLowerCase().includes(value.toLowerCase())
           );
-        }); */
-        // console.log(value);
-        // console.log(results);
+        });
+        console.log(result);
       });
   };
 
-  const handleChange = (value) => {
-    setInput(value);
-    fetchData(value);
+  const handleChange = (e) => {
+    setInput(e.target.value);
+    fetchData(e);
   };
   /*  const handleChange = (e) => {
     onChange(e.target.value);
@@ -41,7 +55,7 @@ export const SearchBar = () => {
             className={css.input}
             type="text"
             value={input}
-            onChange={(e) => handleChange(e.target.value)}
+            onChange={updateQuery}
             placeholder="Search products..."
             minLength={2}
             debounceTimeout={500}
@@ -49,6 +63,10 @@ export const SearchBar = () => {
 
           <HiSearch className={css.icon} />
           {/* </div> */}
+
+          <div>
+            <SearchResults results={results} array={array} />
+          </div>
         </div>
       </form>
     </>
