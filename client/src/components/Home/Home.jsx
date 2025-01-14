@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Loader } from '../../components/Loader/Loader';
 import { SearchBar } from '../SearchBar/SearchBar';
-// import SearchResults from '../SearchBar/SearchResults/SearchResults';
+import SearchResults from '../SearchBar/SearchResults/SearchResults';
 
 const Home = () => {
   const [array, setArray] = useState([]);
@@ -60,7 +60,8 @@ const Home = () => {
       {/* prettier-ignore */}
       {/* Add Search bar Input */}
 
-      <SearchBar setResults={setResults} array={array} results={results} />
+      <SearchBar setResults={setResults} />
+      <SearchResults results={results} />
 
       <div className={css.productArrContainer}>
         {array.map((array) => {

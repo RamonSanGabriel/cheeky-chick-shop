@@ -3,13 +3,13 @@ import { DebounceInput } from 'react-debounce-input';
 import { HiSearch } from 'react-icons/hi';
 import css from './SearchBar.module.css';
 import { useState } from 'react';
-import SearchResults from './SearchResults/SearchResults';
+// import SearchResults from './SearchResults/SearchResults';
 import { useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 // import { getAllProducts } from '../../../../server/controllers/productController';
 // import { httpError } from '../../../../server/helpers/httpError.js';
 
-export const SearchBar = ({ setResults, array, results }) => {
+export const SearchBar = ({ setResults, results }) => {
   const [input, setInput] = useState('');
   // const [results, setResults] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -41,7 +41,8 @@ export const SearchBar = ({ setResults, array, results }) => {
   }; */
 
   const fetchData = async (value) => {
-    const url = `https://dummyjson.com/products/search?q=${input}`;
+    // const url = `https://dummyjson.com/products/search?q=${input}`;
+    const url = `https://dummyjson.com/products`;
     const response = await axios.get(url);
     const result = response.data.products.filter((product) => {
       return (
@@ -50,8 +51,9 @@ export const SearchBar = ({ setResults, array, results }) => {
         product.title.toLowerCase().includes(value.toLowerCase())
       );
     });
-    console.log(result);
-    // setResults(result);
+    // console.log(result);
+    setResults(result);
+    ('');
   };
 
   const handleChange = (value) => {
@@ -80,9 +82,7 @@ export const SearchBar = ({ setResults, array, results }) => {
           <HiSearch className={css.icon} />
           {/* </div> */}
 
-          <div>
-            <SearchResults results={results} array={array} />
-          </div>
+          <div></div>
         </div>
       </form>
     </>
