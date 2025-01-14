@@ -7,11 +7,13 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Loader } from '../../components/Loader/Loader';
 import { SearchBar } from '../SearchBar/SearchBar';
+// import SearchResults from '../SearchBar/SearchResults/SearchResults';
 
 const Home = () => {
   const [array, setArray] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [results, setResults] = useState([]);
 
   axios.defaults.withCredentials = false;
   const fetchAPI = async () => {
@@ -22,7 +24,6 @@ const Home = () => {
         'https://dummyjson.com/products'
       );
       setArray(response.data.products);
-      console.log(response.data.products);
     } catch (error) {
       setError(error.data);
     } finally {
@@ -59,7 +60,8 @@ const Home = () => {
       {/* prettier-ignore */}
       {/* Add Search bar Input */}
 
-      <SearchBar />
+      <SearchBar setResults={setResults} array={array} results={results} />
+
       <div className={css.productArrContainer}>
         {array.map((array) => {
           return (

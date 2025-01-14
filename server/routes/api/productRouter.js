@@ -1,5 +1,4 @@
 import express from 'express';
-// import { listAllProducts } from '../../models/mockData.js';
 import bodyParser from 'body-parser';
 import { nanoid } from 'nanoid';
 // prettier-ignore

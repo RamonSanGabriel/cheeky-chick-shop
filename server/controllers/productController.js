@@ -8,17 +8,19 @@ const getAllProducts = async (_req, res) => {
     res.json(products);
   } catch (error) {
     next(error);
+    // throw httpError(res, 404, 'Product not found');
   }
 };
 
 const getProductById = async (req, res) => {
   const { productId } = req.params;
 
-  const result = await Product.findById(productId);
-  if (!result) {
+  const results = await Product.findById(productId);
+  if (!results) {
     throw httpError(res, 404, 'Product not found');
   }
-  res.json(result);
+  res.json(results);
+  // console.log(result);
 };
 
 const addProduct = async (req, res) => {
