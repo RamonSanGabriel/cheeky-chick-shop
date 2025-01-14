@@ -5,6 +5,7 @@ import css from './SearchBar.module.css';
 import { useState } from 'react';
 import SearchResults from './SearchResults/SearchResults';
 import { useSearchParams } from 'react-router-dom';
+import axios from 'axios';
 // import { getAllProducts } from '../../../../server/controllers/productController';
 // import { httpError } from '../../../../server/helpers/httpError.js';
 
@@ -25,10 +26,11 @@ export const SearchBar = ({ setResults, array, results }) => {
     product.title.toLowerCase().includes(productName.toLowerCase())
   ); */
 
-  const fetchData = (value) => {
+  /*   const fetchData = (value) => {
     fetch(`https://dummyjson.com/products/search?q=${input}`)
       .then((response) => response.json())
       .then((json) => {
+        console.log(value);
         const result = json.filter((product) => {
           return (
             product && product.title.toLowerCase().includes(value.toLowerCase())
@@ -36,11 +38,25 @@ export const SearchBar = ({ setResults, array, results }) => {
         });
         console.log(result);
       });
+  }; */
+
+  const fetchData = async (value) => {
+    const url = `https://dummyjson.com/products/search?q=${input}`;
+    const response = await axios.get(url);
+    const result = response.data.products.filter((product) => {
+      return (
+        value &&
+        product &&
+        product.title.toLowerCase().includes(value.toLowerCase())
+      );
+    });
+    console.log(result);
+    // setResults(result);
   };
 
-  const handleChange = (e) => {
-    setInput(e.target.value);
-    fetchData(e);
+  const handleChange = (value) => {
+    setInput(value);
+    fetchData(value);
   };
   /*  const handleChange = (e) => {
     onChange(e.target.value);
@@ -55,7 +71,7 @@ export const SearchBar = ({ setResults, array, results }) => {
             className={css.input}
             type="text"
             value={input}
-            onChange={updateQuery}
+            onChange={(e) => handleChange(e.target.value)}
             placeholder="Search products..."
             minLength={2}
             debounceTimeout={500}
