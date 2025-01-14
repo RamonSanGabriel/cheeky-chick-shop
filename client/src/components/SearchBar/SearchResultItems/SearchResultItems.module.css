@@ -1,0 +1,11 @@
+.resultItems {
+  padding: 10px 20px;
+  background-color: #fff;
+  & p {
+    margin: 0;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+}

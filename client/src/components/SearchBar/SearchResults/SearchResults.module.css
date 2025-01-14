@@ -81,3 +81,15 @@
   flex-shrink: 1;
   padding: 10px;
 }
+
+.resultList {
+  width: 500px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 8px #ddd;
+  border-radius: 10px;
+  margin: 0 auto 1rem;
+  max-height: 300px;
+  overflow-y: scroll;
+}
