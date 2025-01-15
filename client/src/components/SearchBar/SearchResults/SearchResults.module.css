@@ -82,15 +82,15 @@
   padding: 10px;
 }
 .resultList {
-  width: 565px;
+  width: 620px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 8px #ddd;
   border-radius: 5px;
-  left: 178px;
+  left: 430px;
   /* min-height: 180px; */
-  max-height: 180px;
+  max-height: 300px;
   overflow-y: scroll;
   position: absolute;
   margin: 0 auto;
@@ -99,7 +99,7 @@
   @media (width <768px) {
     /* margin-left: 10px; */
     /* width: 100%; */
-    width: 260px;
-    left: 6px;
+    width: 265px;
+    left: 8px;
   }
 }
