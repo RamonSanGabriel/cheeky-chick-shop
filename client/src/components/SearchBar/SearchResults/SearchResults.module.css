@@ -82,17 +82,18 @@
   padding: 10px;
 }
 .resultList {
-  width: 620px;
+  width: 600px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 8px #ddd;
   border-radius: 5px;
-  left: 430px;
   /* min-height: 180px; */
-  max-height: 300px;
+  max-height: 250px;
   overflow-y: scroll;
   position: absolute;
+  top: 50px;
+  right: 0;
   margin: 0 auto;
   z-index: 100;
 
@@ -100,6 +101,6 @@
     /* margin-left: 10px; */
     /* width: 100%; */
     width: 265px;
-    left: 8px;
+    left: 0;
   }
 }

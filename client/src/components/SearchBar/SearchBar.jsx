@@ -3,7 +3,7 @@ import { DebounceInput } from 'react-debounce-input';
 import { HiSearch } from 'react-icons/hi';
 import css from './SearchBar.module.css';
 import { useState } from 'react';
-// import SearchResults from './SearchResults/SearchResults';
+import SearchResults from './SearchResults/SearchResults';
 import { useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 // import { getAllProducts } from '../../../../server/controllers/productController';
@@ -42,7 +42,7 @@ export const SearchBar = ({ setResults, results }) => {
 
   const fetchData = async (value) => {
     // const url = `https://dummyjson.com/products/search?q=${input}`;
-    const url = `https://dummyjson.com/products`;
+    const url = `https://dummyjson.com/products/search?q=${input}`;
     const response = await axios.get(url);
     const result = response.data.products.filter((product) => {
       return (
@@ -75,13 +75,13 @@ export const SearchBar = ({ setResults, results }) => {
             value={input}
             onChange={(e) => handleChange(e.target.value)}
             placeholder="Search products..."
-            minLength={2}
+            minLength={1}
             debounceTimeout={500}
           />
 
           <HiSearch className={css.icon} />
           {/* </div> */}
-
+          <SearchResults results={results} />
           <div></div>
         </div>
       </form>
