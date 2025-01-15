@@ -9,7 +9,7 @@ const SearchResultItems = ({ result }) => {
     console.log(showProducts);
   };
   return (
-    <div key={result} className={css.resultItems}>
+    <div key={result.id} className={css.resultItems}>
       <p onClick={(e) => handleChange(result)}>{result.title}</p>
     </div>
   );
