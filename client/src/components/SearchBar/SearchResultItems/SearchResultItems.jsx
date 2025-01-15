@@ -3,17 +3,39 @@ import css from './SearchResultItems.module.css';
 
 const SearchResultItems = ({ result, id }) => {
   const [showProducts, setShowProducts] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
+  console.log(showProducts);
   const handleChange = (e) => {
-    setShowProducts(showProducts);
-
-    // console.log(handleChange);
+    setSelectedProduct(result.title);
+    setShowProducts((showResult) => [result.title]);
   };
+
   return (
     <div key={id} className={css.resultItems}>
-      <p onClick={(e) => handleChange(e.target.value)}>{result.title}</p>
+      <p
+        value={selectedProduct}
+        onClick={handleChange}
+        // className={selectedProduct === result.title ? css.selected : ''}
+      >
+        {result.title}
+      </p>
     </div>
   );
 };
 
 export default SearchResultItems;
+
+/* const SearchResultItems = ({ result, id }) => {
+  const [showProducts, setShowProducts] = useState([]);
+
+  const handleChange = (e) => {
+  
+  };
+
+  return (
+    <div key={id} className={css.resultItems}>
+      <p onClick={handleChange} className={selectedProduct === result.title ? css.selected : ''}>{result.title}</p>
+    </div>
+  );
+}; */
