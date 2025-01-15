@@ -1,4 +1,5 @@
 import SearchResultItems from '../SearchResultItems/SearchResultItems';
+
 import css from './SearchResults.module.css';
 
 const SearchResults = ({ results }) => {

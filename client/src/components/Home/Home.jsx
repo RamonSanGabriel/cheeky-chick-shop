@@ -1,4 +1,4 @@
-import css from './Home.module.css';
+// import css from './Home.module.css';
 import Header from '../Header/Header';
 import NavBar from '../NavBar/NavBar';
 import Information from '../../components/Information/Information';
@@ -7,14 +7,15 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Loader } from '../../components/Loader/Loader';
 import { SearchBar } from '../SearchBar/SearchBar';
+import ShowResults from '../SearchBar/ShowResults/ShowResults';
+import Product from '../Product/Product';
 
-const Home = () => {
+const Home = ({ result }) => {
   const [array, setArray] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState([]);
 
-  axios.defaults.withCredentials = false;
   const fetchAPI = async () => {
     setLoading(true);
     try {
@@ -29,6 +30,7 @@ const Home = () => {
       setLoading(false);
     }
   };
+  axios.defaults.withCredentials = false;
 
   useEffect(() => {
     (async () => {
@@ -38,6 +40,7 @@ const Home = () => {
         console.error(error);
       }
     })();
+    return () => {};
   }, []);
 
   if (loading) {
@@ -60,50 +63,8 @@ const Home = () => {
       {/* Add Search bar Input */}
 
       <SearchBar setResults={setResults} results={results} />
-
-      <div className={css.productArrContainer}>
-        {array.map((array) => {
-          return (
-            <div className={css.productContainer} key={array.id}>
-              <div className={css.productImageContainer}>
-                <img
-                  className={css.productImage}
-                  src={array.images[0]}
-                  alt={array.title}
-                />
-              </div>
-
-              <div className={css.productListWrapper}>
-                <ul className={css.productList}>
-                  <div className={css.productImageContent}>
-                    <li className={css.productListItem}>
-                      <div className={css.productListPrice}>
-                        <p>₱ {array.price}</p>
-                      </div>
-                    </li>
-                  </div>
-
-                  <div className={css.productImageContent}>
-                    <li className={css.productListItem}>
-                      <div className={css.productListTitle}>
-                        <h2>{array.title}</h2>
-                      </div>
-                    </li>
-                  </div>
-
-                  <div className={css.productImageContent}>
-                    <li className={css.productListItem}>
-                      <div className={css.productListStock}>
-                        <p>Stock: {array.stock}</p>
-                      </div>
-                    </li>
-                  </div>
-                </ul>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      <ShowResults results={results} />
+      <Product array={array} />
       <Information />
       <Footer />
     </>
