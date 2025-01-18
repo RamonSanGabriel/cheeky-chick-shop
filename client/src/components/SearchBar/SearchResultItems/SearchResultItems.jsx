@@ -5,7 +5,7 @@ import ShowResults from '../ShowResults/ShowResults';
 const SearchResultItems = ({ result, id }) => {
   const [showProducts, setShowProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  console.log(showProducts);
+  // console.log(showProducts);
 
   const handleChange = (e) => {
     setSelectedProduct(result.title);
@@ -19,14 +19,15 @@ const SearchResultItems = ({ result, id }) => {
   return (
     <div>
       <div key={id} className={css.resultItems}>
-        <p
+        <button
+          className={css.resultItemsBtn}
           value={selectedProduct}
           onClick={handleChange}
           // className={selectedProduct === result.title ? css.selected : ''}
         >
-          {result.title}
-        </p>
-        {/* <ShowResults result={result} /> */}
+          <p>{result.title}</p>
+        </button>
+        <ShowResults result={showProducts} />
       </div>
     </div>
   );

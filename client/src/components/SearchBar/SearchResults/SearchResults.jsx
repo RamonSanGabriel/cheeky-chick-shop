@@ -3,6 +3,7 @@ import SearchResultItems from '../SearchResultItems/SearchResultItems';
 import css from './SearchResults.module.css';
 
 const SearchResults = ({ results }) => {
+  console.log(results);
   return (
     <div className={css.resultList}>
       {results.map((result, id) => {

@@ -10,18 +10,20 @@ import { SearchBar } from '../SearchBar/SearchBar';
 import ShowResults from '../SearchBar/ShowResults/ShowResults';
 import Product from '../Product/Product';
 
-const Home = ({ result }) => {
+const Home = () => {
   const [array, setArray] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState([]);
+  const [search, setSearch] = useState('');
 
   const fetchAPI = async () => {
     setLoading(true);
     try {
       const response = await axios.get(
         // 'https://localhost:8080/products'
-        'https://dummyjson.com/products'
+        'https://dummyjson.com/products',
+        search
       );
       setArray(response.data.products);
     } catch (error) {
@@ -35,7 +37,7 @@ const Home = ({ result }) => {
   useEffect(() => {
     (async () => {
       try {
-        fetchAPI();
+        fetchAPI(search);
       } catch (error) {
         console.error(error);
       }
@@ -63,7 +65,7 @@ const Home = ({ result }) => {
       {/* Add Search bar Input */}
 
       <SearchBar setResults={setResults} results={results} />
-      <ShowResults results={results} />
+      {/* <ShowResults result={result} /> */}
       <Product array={array} />
       <Information />
       <Footer />

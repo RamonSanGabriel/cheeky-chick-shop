@@ -12,10 +12,7 @@ const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
   origin: 'http://localhost:5173',
 }; */
 const corsOptions = {
-  origin: [
-    // 'http://localhost:5173',
-    'https://dummyjson.com/',
-  ],
+  origin: ['http://localhost:5173', 'https://dummyjson.com/'],
   methods: ['GET', 'POST', 'UPDATE', 'DELETE', 'PATCH'],
   credentials: true,
 };

@@ -1,6 +1,7 @@
+// import ShowResults from '../SearchBar/ShowResults/ShowResults';
 import css from './Product.module.css';
 
-const Product = ({ array }) => {
+const Product = ({ array, results, input }) => {
   return (
     <div>
       {/* <h3>Product Details</h3> */}
@@ -47,6 +48,7 @@ const Product = ({ array }) => {
           );
         })}
       </div>
+      {/* <ShowResults results={results} input={input} /> */}
     </div>
   );
 };
