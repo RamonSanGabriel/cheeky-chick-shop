@@ -26,6 +26,7 @@ app.use('/products', productRouter);
 app.use(express.json());
 app.use(express.static('public'));
 
+// Middleware
 app.use((_req, res) => {
   res.status(404).send({ message: 'Not found' });
 });
