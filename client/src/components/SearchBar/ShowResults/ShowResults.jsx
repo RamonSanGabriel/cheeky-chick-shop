@@ -6,7 +6,7 @@ import { Loader } from '../../Loader/Loader';
 
 const ShowResults = ({ result }) => {
   const { productId } = useParams();
-  const [searchResult, setSearchResult] = useState([]);
+  // const [searchResult, setSearchResult] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   console.log(result);
 

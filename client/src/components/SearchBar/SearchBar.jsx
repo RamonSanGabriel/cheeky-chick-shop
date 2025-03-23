@@ -13,11 +13,7 @@ export const SearchBar = ({ setResults, results }) => {
     const url = `https://dummyjson.com/products/search?q=${input}`;
     const response = await axios.get(url);
     const result = response.data.products.filter((product) => {
-      return (
-        value &&
-        product &&
-        product.title.toLowerCase().includes(value.toLowerCase())
-      );
+      return value && product && product.title.toLowerCase().includes(value);
     });
     setResults(result);
     ('');
@@ -36,8 +32,8 @@ export const SearchBar = ({ setResults, results }) => {
             className={css.input}
             type="text"
             value={input}
-            // onChange={(e) => handleChange(e.target.value)}
-            onChange={(e) => handleChange(results)}
+            onChange={(e) => handleChange(e.target.value)}
+            // onChange={(value) => handleChange(results)}
             placeholder="Search products..."
             minLength={1}
             debounceTimeout={500}
